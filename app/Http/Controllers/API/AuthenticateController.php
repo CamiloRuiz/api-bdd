@@ -19,6 +19,14 @@ class AuthenticateController extends Controller
                 return response()->json([
                     'error' => 'invalid_credentials'
                 ], 401);
+            } else {
+                $user = array(
+                    'id' => 1,
+                    'firstname' => 'Jhon',
+                    'lastname' => 'Doe',
+                    'email' => 'cristian@gmail.com',
+                    'picture_url' => 'http://asdf/indw/jorge.jpg'
+                );
             }
         } catch (JWTException $e) {
             // something went wrong whilst attempting to encode the token
@@ -27,6 +35,6 @@ class AuthenticateController extends Controller
             ], 500);
         }
         // No errors, return the token
-        return response()->json(compact('token'));
+        return response()->json(compact('token', 'user'));
     }
 }

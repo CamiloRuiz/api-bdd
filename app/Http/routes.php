@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'API'], function(){
+    Route::get('/', function () {
+        return 'Welcome!';
+    });
+    Route::resource('auth', 'AuthenticateController', ['only' => ['store']]);
 });

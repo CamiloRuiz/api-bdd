@@ -4,16 +4,17 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class RootTest extends TestCase
 {
     /**
      * A basic functional test example.
      *
      * @return void
      */
-    public function testBasicExample()
+    public function testAPIRoot()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+            ->see('Welcome!')
+            ->dontSee('Laravel 5');
     }
 }

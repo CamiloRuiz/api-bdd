@@ -159,9 +159,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * JWT service providers...
+         * Third part service providers...
          */
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
     ],
 
